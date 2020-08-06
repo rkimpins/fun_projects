@@ -151,7 +151,7 @@ def main():
     # touch test.txt && rm test.txt && python3 tile_flipping.py >> test.txt && vim test.txt
 
     # Check all solutions for a certain dimension
-    all_solvable(5)
+    all_solvable(4)
 
     # Example of solving a simple problem
     # board = "100011001"
@@ -167,7 +167,7 @@ def main():
     | 1   | 1           | 1        | 0          |
     | 2   | 16          | 16       | 0          |
     | 3   | 512         | 512      | 0          |
-    | 4   | 65536       | 4095     | 61440      |
+    | 4   | 65536       | 4096     | 61440      |
     | 5   | 33554432    |          |            |
     | 6   | 68719476736 |          |            |
     +-----+-------------+----------+------------+
