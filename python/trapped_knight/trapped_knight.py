@@ -168,6 +168,5 @@ def main():
 
 #TODO consider refactoring into a more Object Oriented design to allow for experimentation
 #Better visualization, specifically drawing the line, LIVE
-#
 
 main()
