@@ -1,8 +1,8 @@
-import game
+from board import Grid
 
 def testCollapseRow():
-    print("Running tests for collapseRow()")
-    grid = game.Grid()
+    print("Running tests for collapse_row()")
+    grid = Grid(4)
     
     a = [2, 0, 0, 0]
     b = [2, 0, 2, 0]
@@ -11,6 +11,7 @@ def testCollapseRow():
     e = [8, 8, 16, 8]
     f = [2, 0, 2, 4]
     g = [2, 8, 4, 4]
+    h = [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2]
 
     a_sol = ([2, 0, 0, 0], False)
     b_sol = ([4, 0, 0, 0], True)
@@ -19,46 +20,20 @@ def testCollapseRow():
     e_sol = ([16, 16, 8, 0], True)
     f_sol = ([4, 4, 0, 0], True)
     g_sol = ([2, 8, 8, 0], True)
-    
-    if grid.collapseRow(a) == a_sol:
-        print("Test (a) passed.")
-    else:
-        print("Test (a) failed")
+    h_sol = ([4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], True)
 
-    if grid.collapseRow(b) == b_sol:
-        print("Test (b) passed.")
-    else:
-        print("Test (b) failed")
-
-    if grid.collapseRow(c) == c_sol:
-        print("Test (c) passed.")
-    else:
-        print("Test (c) failed")
-
-    if grid.collapseRow(d) == d_sol:
-        print("Test (d) passed.")
-    else:
-        print("Test (d) failed")
-
-    if grid.collapseRow(e) == e_sol:
-        print("Test (e) passed.")
-    else:
-        print("Test (e) failed")
-
-    if grid.collapseRow(f) == f_sol:
-        print("Test (f) passed.")
-    else:
-        print("Test (f) failed")
-
-    if grid.collapseRow(g) == g_sol:
-        print("Test (g) passed.")
-    else:
-        print("Test (g) failed")
-
-
+    assert(grid.collapse_row(a) == a_sol)
+    assert(grid.collapse_row(b) == b_sol)
+    assert(grid.collapse_row(c) == c_sol)
+    assert(grid.collapse_row(d) == d_sol)
+    assert(grid.collapse_row(e) == e_sol)
+    assert(grid.collapse_row(f) == f_sol)
+    assert(grid.collapse_row(g) == g_sol)
+    assert(grid.collapse_row(h) == h_sol)
+"""
 def testCollapseLeft():
     print("Running test for collapseLeft()")
-    grid = game.Grid()
+    grid = Grid()
     grid._grid = [[0, 0, 0, 0],
                    [0, 0, 0, 4],
                    [2, 0, 2, 16],
@@ -80,7 +55,7 @@ def testCollapseLeft():
 
 def testCollapseDown():
     print("Running test for collapseDown()")
-    grid = game.Grid()
+    grid = Grid()
     grid._grid = [[2, 8, 2, 4],
                    [8, 4, 8, 2],
                    [2, 4, 2, 4],
@@ -102,7 +77,7 @@ def testCollapseDown():
 
 def testCollapsible():
     print("Running test for collapsible()")
-    grid = game.Grid()
+    grid = Grid()
     
     grid.emptiesSet = [0, 1, 2, 3, 4, 5, 6, 8]
     grid._grid = [[0, 0, 0, 0],
@@ -151,7 +126,7 @@ def testCollapsible():
 
 def testEmpties():
     print("Running test for updateEmptiesSet()")
-    grid = game.Grid()
+    grid = Grid()
     grid._grid = [[0, 0, 0, 0],
                   [0, 0, 0, 4],
                   [2, 0, 2, 16],
@@ -163,6 +138,29 @@ def testEmpties():
     else:
         print('Empties set test failed.')
 
+def testRollout():
+    pass
+    #x = Grid()
+    #y = x.copy()
+    #x.drawGrid()
+    #y.drawGrid()
+    #x = Grid(4)
+    #print(x.collapse_row([0, 0, 2, 2]))
+    #x.spawn_tile()
+    #x.show()
+    #print()
+    #x.play_move(UP)
+    #x.show()
+    #print()
+    #x.play_move(RIGHT)
+    #x.show()
+    #print()
+    #x.play_move(DOWN)
+    #x.show()
+    #print()
+    #x.play_move(LEFT)
+    #x.show()
+    #print()
 
 
 # Uncomment the tests for the function you want to check
@@ -171,4 +169,6 @@ def testEmpties():
 #testCollapseLeft()
 #testCollapseDown()
 #testCollapsible()
-testEmpties()
+#testEmpties()
+
+"""
